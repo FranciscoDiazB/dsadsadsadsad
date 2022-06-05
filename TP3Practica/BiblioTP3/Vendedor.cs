@@ -16,6 +16,11 @@ namespace BiblioTP3
             set { comision = value; }
         }
 
+        public Vendedor()
+        {
+
+        }
+
         public Vendedor(string nombre, string apellido, float numero) : base(nombre, apellido)
         {
             this.comision = numero;   

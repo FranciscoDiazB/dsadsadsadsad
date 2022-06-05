@@ -11,6 +11,11 @@ namespace BiblioTP3
         string nombre;
         string apellido; 
 
+        public Persona()
+        {
+
+        }
+
         public Persona(string nombre, string apellido)
         {
             this.nombre = nombre;

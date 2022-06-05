@@ -18,9 +18,7 @@ namespace PintureriaRegistro
         public FrmRegistroDatos()
         {
             InitializeComponent();
-
         }
-
 
         public FrmRegistroDatos(List<Ventas> ventas) : this()
         {
@@ -57,7 +55,6 @@ namespace PintureriaRegistro
             cmbTipo.Items.Add(TipoPintura.Esmalte);
             cmbTipo.Items.Add(TipoPintura.Cieloraso);
             cmbTipo.Items.Add(TipoPintura.Barniz);
-
         }
 
         private void FrmRegistroDatos_FormClosing(object sender, FormClosingEventArgs e)
@@ -67,20 +64,8 @@ namespace PintureriaRegistro
 
         private void button1_Click(object sender, EventArgs e)
         {
-                string unidades;
-                float total = 0;
-                StringBuilder sb = new StringBuilder();
-        
-                unidades = txtUnidades.Text;
                 try
                 {
-
-                    total = (float) float.Parse(txtPrecio.Text) * float.Parse(unidades);
-                    sb.AppendLine($"{txtMarca.Text} {txtCodigo.Text}");
-                    sb.AppendLine($"Total: ${total} Pago: {cmbPago.SelectedItem}");
-                    sb.AppendLine($"Cliente: {txtApellCliente.Text}, {txtCliente.Text}");
-                    sb.AppendLine($"Vendedor: {txtNombreVendedor.Text} ");
-
                     if ( string.IsNullOrEmpty(txtApellCliente.Text) || string.IsNullOrEmpty(txtCliente.Text) || 
                          string.IsNullOrEmpty(txtCodigo.Text) || string.IsNullOrEmpty(txtMarca.Text) || 
                          string.IsNullOrEmpty(txtPrecio.Text) || string.IsNullOrEmpty(txtUnidades.Text) || 
@@ -88,17 +73,18 @@ namespace PintureriaRegistro
                          cmbColor.SelectedItem == null || cmbLitros == null || string.IsNullOrEmpty(txtNombreVendedor.Text))
                     {
 
-                    MessageBox.Show("Se deben ingresar todos los datos antes de poder continuar");
+                    MessageBox.Show("Se deben ingresar todos los datos antes de poder continuar", "Errror en el ingreso de datos");
                      
                     }
                     else
                     {
-                        rtbVenta.Text = sb.ToString();
+                        rtbVenta.Text = MetodosAyuda.Mostrar(txtPrecio.Text, txtMarca.Text, txtCodigo.Text,cmbPago.SelectedItem, 
+                            txtCliente.Text, txtApellCliente.Text, txtNombreVendedor.Text, txtUnidades.Text);
                     }
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message, "Excepcion Encontrada");
                 }
 
         }
@@ -110,13 +96,7 @@ namespace PintureriaRegistro
 
         private void btnAgregarVenta_Click(object sender, EventArgs e)
         {
-            float precio = 0;
-            float comision = 0;
-            int unidades = 0;
-            ColorPintura color;
-            TipoPintura tipo;
-            int litros = 0;
-            float total = 0;
+           float total = 0;
 
             try
             {
@@ -126,37 +106,19 @@ namespace PintureriaRegistro
                             cmbTipo.SelectedItem == null || cmbPago.SelectedItem == null ||
                             cmbColor.SelectedItem == null || cmbLitros.SelectedItem == null || string.IsNullOrEmpty(txtNombreVendedor.Text))
                 {
-                    MessageBox.Show("Se deben ingresar todos los datos antes de poder continuar");
+                    MessageBox.Show("Se deben ingresar todos los datos antes de poder continuar", "Errror en el ingreso de datos");
                 }
                 else
                 {
-                    precio = float.Parse(txtPrecio.Text);
-                    unidades = int.Parse(txtUnidades.Text);
-                    tipo = (TipoPintura) cmbTipo.SelectedItem;
-                    color = (ColorPintura)cmbColor.SelectedItem;
-                    litros = (int) cmbLitros.SelectedItem;
-                    total = (float) precio * unidades;
-
-                    if(total > 0 && total < 15000)
-                    {
-                        comision = 0;                      
-                    }
-                    else if(total >= 15000  && total < 30000)
-                    {
-                        comision = (float) (total * 0.05);                   
-                    }
-                    else
-                    {
-                        comision = (float)(total * 0.1);
-                    }
+                    total = MetodosAyuda.CalcularTotal(float.Parse(txtPrecio.Text), txtUnidades.Text);
 
                     Cliente nuevoCliente = new Cliente(txtCliente.Text, txtApellCliente.Text, cmbPago.SelectedItem.ToString());
-                    Pintura nuevaPintura = new Pintura(txtMarca.Text, txtCodigo.Text, precio, color, litros, tipo);
-                    Vendedor nuevoVendedor = new Vendedor(txtNombreVendedor.Text, "", comision);
+                    Pintura nuevaPintura = new Pintura(txtMarca.Text, txtCodigo.Text, float.Parse(txtPrecio.Text), (ColorPintura)cmbColor.SelectedItem, (int)cmbLitros.SelectedItem, (TipoPintura)cmbTipo.SelectedItem);
+                    Vendedor nuevoVendedor = new Vendedor(txtNombreVendedor.Text, "", MetodosAyuda.CalcularComision(total));
 
                     if (nuevoCliente != null && nuevaPintura != null && nuevoVendedor != null)
                     {
-                        Ventas nuevaVenta = new Ventas(unidades, nuevoCliente, nuevaPintura, nuevoVendedor, total);
+                        Ventas nuevaVenta = new Ventas(nuevoCliente, nuevaPintura, nuevoVendedor, MetodosAyuda.AplicarDescuentoCorrespondiente(total, cmbPago.SelectedItem.ToString()), int.Parse(txtUnidades.Text));
 
                         if (nuevaVenta != null)
                         {
@@ -164,19 +126,16 @@ namespace PintureriaRegistro
 
                             if(this.Ventas != null)
                             {
-                                MessageBox.Show("La venta fue agregada a la lista");
+                                MessageBox.Show("La venta fue agregada a la lista", "EXITOS");
                             }
                         }                   
                     }
                 }
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Excepcion Encontrada");
             }
-        }
-
-        
+        }     
     }
 }

@@ -32,16 +32,18 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnAgregarArchivo = new System.Windows.Forms.Button();
             this.lblListadoDeDatos = new System.Windows.Forms.Label();
+            this.btnAgregarXml = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lsbListadoVentas
             // 
             this.lsbListadoVentas.FormattingEnabled = true;
             this.lsbListadoVentas.HorizontalScrollbar = true;
-            this.lsbListadoVentas.ItemHeight = 20;
-            this.lsbListadoVentas.Location = new System.Drawing.Point(12, 67);
+            this.lsbListadoVentas.ItemHeight = 15;
+            this.lsbListadoVentas.Location = new System.Drawing.Point(10, 50);
+            this.lsbListadoVentas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lsbListadoVentas.Name = "lsbListadoVentas";
-            this.lsbListadoVentas.Size = new System.Drawing.Size(1332, 304);
+            this.lsbListadoVentas.Size = new System.Drawing.Size(1166, 229);
             this.lsbListadoVentas.TabIndex = 0;
             // 
             // btnVolver
@@ -49,9 +51,10 @@
             this.btnVolver.BackColor = System.Drawing.Color.Black;
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(12, 377);
+            this.btnVolver.Location = new System.Drawing.Point(10, 283);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(156, 63);
+            this.btnVolver.Size = new System.Drawing.Size(136, 47);
             this.btnVolver.TabIndex = 1;
             this.btnVolver.Text = "Volver al Inicio";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -61,11 +64,12 @@
             this.btnAgregarArchivo.BackColor = System.Drawing.Color.Black;
             this.btnAgregarArchivo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAgregarArchivo.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarArchivo.Location = new System.Drawing.Point(1078, 377);
+            this.btnAgregarArchivo.Location = new System.Drawing.Point(926, 283);
+            this.btnAgregarArchivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregarArchivo.Name = "btnAgregarArchivo";
-            this.btnAgregarArchivo.Size = new System.Drawing.Size(266, 63);
+            this.btnAgregarArchivo.Size = new System.Drawing.Size(250, 47);
             this.btnAgregarArchivo.TabIndex = 2;
-            this.btnAgregarArchivo.Text = "Agregar datos a un Archivo";
+            this.btnAgregarArchivo.Text = "Agregar datos a un Archivo .txt";
             this.btnAgregarArchivo.UseVisualStyleBackColor = false;
             this.btnAgregarArchivo.Click += new System.EventHandler(this.btnAgregarArchivo_Click);
             // 
@@ -73,22 +77,38 @@
             // 
             this.lblListadoDeDatos.AutoSize = true;
             this.lblListadoDeDatos.Font = new System.Drawing.Font("Times New Roman", 22F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lblListadoDeDatos.Location = new System.Drawing.Point(552, 9);
+            this.lblListadoDeDatos.Location = new System.Drawing.Point(483, 7);
             this.lblListadoDeDatos.Name = "lblListadoDeDatos";
-            this.lblListadoDeDatos.Size = new System.Drawing.Size(286, 43);
+            this.lblListadoDeDatos.Size = new System.Drawing.Size(232, 34);
             this.lblListadoDeDatos.TabIndex = 15;
             this.lblListadoDeDatos.Text = "Listado de Ventas";
             // 
+            // btnAgregarXml
+            // 
+            this.btnAgregarXml.BackColor = System.Drawing.Color.Black;
+            this.btnAgregarXml.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAgregarXml.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarXml.Location = new System.Drawing.Point(670, 283);
+            this.btnAgregarXml.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAgregarXml.Name = "btnAgregarXml";
+            this.btnAgregarXml.Size = new System.Drawing.Size(250, 47);
+            this.btnAgregarXml.TabIndex = 16;
+            this.btnAgregarXml.Text = "Agregar datos a un Archivo Xml";
+            this.btnAgregarXml.UseVisualStyleBackColor = false;
+            this.btnAgregarXml.Click += new System.EventHandler(this.btnAgregarXml_Click);
+            // 
             // FrmListarDatos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(1483, 450);
+            this.ClientSize = new System.Drawing.Size(1186, 338);
+            this.Controls.Add(this.btnAgregarXml);
             this.Controls.Add(this.lblListadoDeDatos);
             this.Controls.Add(this.btnAgregarArchivo);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.lsbListadoVentas);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmListarDatos";
             this.Text = "FrmListarDatos";
             this.Load += new System.EventHandler(this.FrmListarDatos_Load);
@@ -103,5 +123,6 @@
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnAgregarArchivo;
         private System.Windows.Forms.Label lblListadoDeDatos;
+        private System.Windows.Forms.Button btnAgregarXml;
     }
 }

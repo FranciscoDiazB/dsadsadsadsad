@@ -10,16 +10,14 @@ namespace BiblioTP3
 {
     public static class ManejarArchivos
     {
-        public static void Guardar(string path, string texto)
+        public static void GuardarArchivo(string path, string texto, bool concatenar)
         {
-
             try
             {
-                StreamWriter streamWriter = new StreamWriter(path);
-
-                streamWriter.WriteLine(texto);
-
-                streamWriter.Close();
+                using(StreamWriter sw = new StreamWriter(path, concatenar))
+                {
+                    sw.WriteLine(texto);
+                }
             }
             catch (Exception ex)
             {
@@ -27,5 +25,19 @@ namespace BiblioTP3
             }
         }
 
+        public static string LeerArchivo(string path)
+        {
+            try
+            {
+                using(StreamReader sr = new StreamReader(path))
+                {
+                    return sr.ReadToEnd();
+                }
+            }
+            catch(Exception ex)
+            {
+                throw;
+            }
+        }
     }
 }

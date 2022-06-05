@@ -27,19 +27,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Asus\\.nuget\\packages\\": {}
+    "C:\\Users\\Fran\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Asus\\Desktop\\dsadsadsadsad\\TP3Practica\\PintureriaRegistro\\PintureriaRegistro.csproj",
+      "projectUniqueName": "C:\\Users\\Fran\\Desktop\\dsadsadsadsad\\TP3Practica\\PintureriaRegistro\\PintureriaRegistro.csproj",
       "projectName": "PintureriaRegistro",
-      "projectPath": "C:\\Users\\Asus\\Desktop\\dsadsadsadsad\\TP3Practica\\PintureriaRegistro\\PintureriaRegistro.csproj",
-      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Asus\\Desktop\\dsadsadsadsad\\TP3Practica\\PintureriaRegistro\\obj\\",
+      "projectPath": "C:\\Users\\Fran\\Desktop\\dsadsadsadsad\\TP3Practica\\PintureriaRegistro\\PintureriaRegistro.csproj",
+      "packagesPath": "C:\\Users\\Fran\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Fran\\Desktop\\dsadsadsadsad\\TP3Practica\\PintureriaRegistro\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Fran\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -53,8 +53,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\Asus\\Desktop\\dsadsadsadsad\\TP3Practica\\BiblioTP3\\BiblioTP3.csproj": {
-              "projectPath": "C:\\Users\\Asus\\Desktop\\dsadsadsadsad\\TP3Practica\\BiblioTP3\\BiblioTP3.csproj"
+            "C:\\Users\\Fran\\Desktop\\dsadsadsadsad\\TP3Practica\\BiblioTP3\\BiblioTP3.csproj": {
+              "projectPath": "C:\\Users\\Fran\\Desktop\\dsadsadsadsad\\TP3Practica\\BiblioTP3\\BiblioTP3.csproj"
             }
           }
         }
@@ -86,7 +86,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

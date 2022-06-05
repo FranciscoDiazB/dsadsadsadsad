@@ -8,14 +8,19 @@ namespace BiblioTP3
 {
     public class Cliente : Persona
     {
-        private string metodoPago; 
+        private string metodoPago;
 
         public string MetodoPago
         {
             get { return metodoPago; }
             set { metodoPago = value; }
         }
-        
+
+        public Cliente()
+        {
+
+        }
+
         public Cliente(string nombre, string apellido, string pago) : base(nombre, apellido)
         {
             this.metodoPago = pago;

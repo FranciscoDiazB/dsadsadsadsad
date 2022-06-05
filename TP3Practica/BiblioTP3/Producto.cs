@@ -78,6 +78,11 @@ namespace BiblioTP3
             set { codigoProducto = value; }
         }
 
+        public Pintura()
+        {
+
+        }
+
         public Pintura(string marca, float precio, string codigo)    
         {
             this.Precio = precio;

@@ -10,3 +10,15 @@ C:\Users\Asus\source\repos\TP3Practica\BiblioTP3\obj\Debug\net5.0\BiblioTP3.dll
 C:\Users\Asus\source\repos\TP3Practica\BiblioTP3\obj\Debug\net5.0\refint\BiblioTP3.dll
 C:\Users\Asus\source\repos\TP3Practica\BiblioTP3\obj\Debug\net5.0\BiblioTP3.pdb
 C:\Users\Asus\source\repos\TP3Practica\BiblioTP3\obj\Debug\net5.0\ref\BiblioTP3.dll
+C:\Users\Fran\Desktop\dsadsadsadsad\TP3Practica\BiblioTP3\bin\Debug\net5.0\BiblioTP3.deps.json
+C:\Users\Fran\Desktop\dsadsadsadsad\TP3Practica\BiblioTP3\bin\Debug\net5.0\BiblioTP3.dll
+C:\Users\Fran\Desktop\dsadsadsadsad\TP3Practica\BiblioTP3\bin\Debug\net5.0\BiblioTP3.pdb
+C:\Users\Fran\Desktop\dsadsadsadsad\TP3Practica\BiblioTP3\obj\Debug\net5.0\BiblioTP3.csproj.AssemblyReference.cache
+C:\Users\Fran\Desktop\dsadsadsadsad\TP3Practica\BiblioTP3\obj\Debug\net5.0\BiblioTP3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Fran\Desktop\dsadsadsadsad\TP3Practica\BiblioTP3\obj\Debug\net5.0\BiblioTP3.AssemblyInfoInputs.cache
+C:\Users\Fran\Desktop\dsadsadsadsad\TP3Practica\BiblioTP3\obj\Debug\net5.0\BiblioTP3.AssemblyInfo.cs
+C:\Users\Fran\Desktop\dsadsadsadsad\TP3Practica\BiblioTP3\obj\Debug\net5.0\BiblioTP3.csproj.CoreCompileInputs.cache
+C:\Users\Fran\Desktop\dsadsadsadsad\TP3Practica\BiblioTP3\obj\Debug\net5.0\BiblioTP3.dll
+C:\Users\Fran\Desktop\dsadsadsadsad\TP3Practica\BiblioTP3\obj\Debug\net5.0\refint\BiblioTP3.dll
+C:\Users\Fran\Desktop\dsadsadsadsad\TP3Practica\BiblioTP3\obj\Debug\net5.0\BiblioTP3.pdb
+C:\Users\Fran\Desktop\dsadsadsadsad\TP3Practica\BiblioTP3\obj\Debug\net5.0\ref\BiblioTP3.dll

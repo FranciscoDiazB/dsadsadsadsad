@@ -19,7 +19,7 @@ namespace PintureriaRegistro
 
         public List<Ventas> Venta
         {
-            get { return ventas; }
+            get { return this.ventas; }
         }
 
         public FrmListarDatos()
@@ -48,21 +48,45 @@ namespace PintureriaRegistro
 
             try
             {
-                string path = GetFolderPath(SpecialFolder.Desktop) + @"\TP3\MiArchivo.txt";
+                string path = GetFolderPath(SpecialFolder.Desktop) + @"\Prueba Archivo\MiArchivo.txt";
 
-                if(this.ventas != null)
+                if(lsbListadoVentas.Items.Count > 0)
                 {
-                    foreach (Ventas ventas in this.Venta)
+                    foreach (Ventas ventas in this.ventas)
                     {
-                        ManejarArchivos.Guardar(path, ventas.ToString());
+                        ManejarArchivos.GuardarArchivo(path, ventas.ToString(), true);
                     }
                 }
-
+                else
+                {
+                    MessageBox.Show("Debe tener datos cargados en la lista para poder cargar datos a un Archivo de Texto", "Error");
+                }
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Excepcion Encontrada");
             }
+        }
+
+        private void btnAgregarXml_Click(object sender, EventArgs e)
+        {
+           try
+           {
+                string path = GetFolderPath(SpecialFolder.Desktop) + @"\Prueba Archivo\Ventas.xml";
+
+                if (lsbListadoVentas.Items.Count > 0)
+                {
+                    Serializador<List<Ventas>>.GuardarArchivoXml(Venta, path);
+                }
+                else
+                {
+                    MessageBox.Show("Debe tener datos cargados en la lista", "Error");
+                }
+           }
+           catch (Exception ex)
+           {
+               MessageBox.Show(ex.Message, "Excepcion Encontrada");
+           }          
         }
     }
 }

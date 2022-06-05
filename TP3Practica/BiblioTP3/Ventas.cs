@@ -27,34 +27,58 @@ namespace BiblioTP3
             }
         }
 
+        public DateTime FechaVenta
+        {
+            get { return fechaDeVenta; }
+            set 
+            { 
+               fechaDeVenta = value;
+            }
+        }
+
         public Cliente Cliente
         {
             get { return cliente; }
+            set { cliente = value; }
         }
 
         public Pintura Pintura
         {
             get { return pintura; }
+            set { pintura = value; }
         }
 
         public Vendedor Vendedor
         {
            get { return vendedor; }
+            set
+            {
+                vendedor = value;
+            }
         }
 
         public float PrecioTotal
         {
             get { return precioTotal; }
+            set
+            {
+                precioTotal = value;
+            }
         }
 
-        public Ventas(int unidades, Cliente cliente, Pintura pintura, Vendedor vendedor, float precioTotal)
+        public Ventas()
         {
-            this.fechaDeVenta = DateTime.Now;
-            this.cantidadUnidades = unidades;
-            this.cliente = cliente;
-            this.vendedor = vendedor;
-            this.pintura = pintura;
-            this.precioTotal = precioTotal;
+
+        }
+
+        public Ventas(Cliente cliente, Pintura pintura, Vendedor vendedor, float precioTotal, int unidades)
+        {
+            this.FechaVenta = DateTime.Now;
+            this.Unidades = unidades;
+            this.Cliente = cliente;
+            this.Vendedor = vendedor;
+            this.Pintura = pintura;
+            this.PrecioTotal = precioTotal;
         }
 
         public override string ToString()
